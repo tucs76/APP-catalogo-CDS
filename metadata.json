@@ -1,0 +1,7 @@
+{
+  "name": "Copy of My Archive - Music Collection Manager",
+  "description": "A high-end music collection management app for collectors, featuring barcode/cover scanning, market value tracking, and AI-powered collection insights.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

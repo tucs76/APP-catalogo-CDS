@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Archive</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+        // Initialize theme before anything renders
+        const savedTheme = localStorage.getItem('app-theme') || 'dark';
+        document.documentElement.className = savedTheme;
+
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1f6a7a",
+                        "accent-gold": "#E0A32B",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#16191d",
+                        "card-dark": "#24272B",
+                        "surface-dark": "#1e2329",
+                        "emerald-accent": "#10b981"
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"]
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Manrope', sans-serif; transition: background-color 0.3s ease, color 0.3s ease; }
+        .font-display { font-family: 'Epilogue', sans-serif; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Themes */
+        .light { background-color: #f8fafc; color: #1e293b; }
+        .light .bg-surface-dark { background-color: #ffffff; border-color: #e2e8f0; }
+        .light .bg-background-dark { background-color: #f8fafc; }
+        .light .text-slate-100 { color: #1e293b; }
+        .light .text-slate-400 { color: #64748b; }
+        .light .border-white\/5 { border-color: #e2e8f0; }
+        
+        .emerald .text-primary { color: #10b981; }
+        .emerald .bg-primary { background-color: #10b981; }
+        .emerald .border-primary { border-color: #10b981; }
+
+        @keyframes scan {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(280px); }
+            100% { transform: translateY(0); }
+        }
+        .scan-line {
+            animation: scan 3s infinite ease-in-out;
+            background: linear-gradient(to bottom, transparent, #1f6a7a, transparent);
+            height: 4px;
+            width: 100%;
+            position: absolute;
+            z-index: 20;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.35.0"
+  }
+}
+</script>
+</head>
+<body class="bg-background-dark text-slate-100 min-h-screen">
+    <div id="root"></div>
+</body>
+</html>
